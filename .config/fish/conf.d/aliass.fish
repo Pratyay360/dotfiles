@@ -1,6 +1,5 @@
 alias aliass "nano ~/.config/fish/conf.d/aliass.fish"
 alias genv "nano ~/.config/fish/conf.d/variables.fish"
-alias toolbox-shell "nano ~/.config/fish/conf.d/toolbox-shell.fish"
 alias ls "eza  --icons=always"
 alias cd "z"
 alias npm "bun"
