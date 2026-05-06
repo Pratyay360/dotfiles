@@ -1,0 +1,34 @@
+title = "tty"
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = hidden
+window-decoration = true
+command = fish
+shell-integration = fish
+theme = catm
+
+# custom-shader-animation = true
+# custom-shader = "shaders/tesla_coil.glsl"
+# custom-shader = "shaders/glow.glsl"
+
+cursor-style = "bar"
+cursor-style-blink = true
+adjust-cursor-height = 20%
+shell-integration-features = ssh-terminfo,ssh-env,sudo
+mouse-hide-while-typing = true
+font-size = 12
+font-family = "JetBrains Mono"
+#font-family-italic = "Cascadia Code NF"
+#font-variation-italic = "wght=800"
+font-thicken = false
+font-thicken-strength = 1
+
+alpha-blending = native
+window-colorspace = "display-p3"
+window-padding-x = 10
+window-padding-y = 10
+window-padding-color = "background"
+background-opacity = 0.75
+background-blur = true
+background-blur-radius = 80
+adjust-cell-height = 15
+keybind = shift+enter=text:\x1b\r
