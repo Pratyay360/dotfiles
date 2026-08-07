@@ -1,0 +1,10 @@
+[user]
+	signingKey = ssh.variant
+[remote "origin"]
+	url = git@github.com:Pratyay360/dotfiles.git
+	fetch = git@github.com:Pratyay360/dotfiles.git
+[yadm]
+	cipher = age
+[author]
+	email = pratyaymustafi@outlook.com
+	name = pratyay360
