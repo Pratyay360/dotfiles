@@ -1,0 +1,11 @@
+[Container]
+ContainerName=gopeed
+Image=docker.io/liwei2633/gopeed:latest
+Label=io.podman.compose.config-hash=5ee157010ba3d0c490d9bdcdc800863c942d295d1e83de97cc3bafdfe7f569ce io.podman.compose.project=gopeed io.podman.compose.version=1.5.0 PODMAN_SYSTEMD_UNIT=podman-compose@gopeed.service com.docker.compose.project=gopeed com.docker.compose.project.working_dir=/var/home/pmustafi/Templates/gopeed com.docker.compose.project.config_files=compose.yml com.docker.compose.container-number=1 io.podman.compose.service=gopeed com.docker.compose.service=gopeed
+Network=gopeed_default:alias=gopeed
+PodmanArgs=--pod pod_gopeed
+PublishPort=9999:9999
+Volume=/var/home/pmustafi/Downloads:/app/Downloads:Z
+
+[Install]
+WantedBy=default.target
