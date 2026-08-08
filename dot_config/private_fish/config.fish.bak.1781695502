@@ -1,0 +1,26 @@
+if status is-interactive
+   source (/home/pmustafi/.cargo/bin/starship init fish --print-full-init | psub)
+      #fnm env --use-on-cd | source
+    #fnm use default &>/dev/null
+    # gopass completion fish | source
+    #    fishline -s $status SIGSTATUS JOBS VFISH PWD GIT WRITE N ROOT
+    atuin init fish | source
+    #    eval "$(shelby init fish)"
+end
+
+if test -n "$TERM_PROGRAM"
+    exec "$HOME/.local/bin/host-spawn"
+end
+
+source $HOME/.config/vars
+
+# tabtab source for packages
+# uninstall by removing these lines
+
+
+# mimocode
+fish_add_path /home/pmustafi/.mimocode/bin
+
+# Added by GitButler installer
+fish_add_path $HOME/.local/bin
+but completions fish | source
