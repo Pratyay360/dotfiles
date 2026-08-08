@@ -1,0 +1,7 @@
+# .bash_profile
+
+. "$HOME/.bashrc"
+. "$HOME/.profile"
+export LANG=C.utf8
+export LC_ALL=C.utf8
+

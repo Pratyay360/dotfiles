@@ -1,0 +1,265 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "terminal": {
+    "shell": {
+      "with_arguments": {
+        "program": "fish",
+        "args": [],
+        "title_override": null
+      }
+    }
+  },
+  "calls": {
+    "share_on_join": true
+  },
+  "instrumentation": {
+    "performance_profiler": {
+      "enabled": true
+    }
+  },
+  "proxy": "",
+  "auto_update_extensions": {
+    "superhtml": false
+  },
+  "languages": {
+    "HTML": {
+      "show_edit_predictions": false
+    }
+  },
+  "gutter": {
+    "line_numbers": true
+  },
+  "vim_mode": false,
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "edit_predictions": {
+    "open_ai_compatible_api": {
+      "api_url": ""
+    },
+    "mode": "eager",
+    "allow_data_collection": "yes",
+    "provider": "zed"
+  },
+  "tasks": {
+    "prefer_lsp": false
+  },
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+  "cli_default_open_behavior": "new_window",
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "mode": "default",
+        "model": "glm-5.2"
+      },
+      "type": "registry"
+    },
+    "kilo": {
+      "type": "registry"
+    },
+    "cline": {
+      "default_config_options": {
+        "model": "google/gemma-4-31b-it:free"
+      },
+      "type": "registry"
+    },
+    "codebuddy-code": {
+      "type": "registry"
+    },
+    "junie": {
+      "type": "registry"
+    },
+    "mistral-vibe": {
+      "type": "registry"
+    },
+    "qoder": {
+      "type": "registry"
+    },
+    "opencode": {
+      "default_config_options": {
+        "effort": "high",
+        "model": "tokenrouter/z-ai/glm-5.2-free"
+      },
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "default_config_options": {
+        "allow_all": "off"
+      },
+      "favorite_config_option_values": {
+        "allow_all": [
+          "on"
+        ]
+      },
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    },
+    "cursor": {
+      "type": "registry"
+    }
+  },
+  "agent": {
+    "single_file_review": true,
+    "default_profile": "write",
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "always_allow": [
+            {
+              "pattern": "^bunx\\s+tsc(\\s|$)"
+            },
+            {
+              "pattern": "^head\\b"
+            }
+          ]
+        }
+      }
+    },
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "gpt-5-nano",
+      "enable_thinking": false
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "group_by": "status",
+    "tree_view": true,
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "show_signature_help_after_edits": true,
+  "mouse_wheel_zoom": true,
+  "which_key": {
+    "enabled": false
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Mocha"
+  },
+  "context_servers": {
+    "svelteuidev": {
+      "enabled": true,
+      "url": "https://gitmcp.io/svelteuidev/svelteui"
+    },
+    "daisyUI": {
+      "enabled": true,
+      "url": "https://gitmcp.io/saadeghi/daisyui"
+    },
+    "shadcn-mcp-server": {
+      "enabled": true,
+      "remote": false,
+      "settings": {}
+    },
+    "chrome-devtools-mcp-zed": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "browser_url": null,
+        "ws_endpoint": null,
+        "ws_headers": null,
+        "auto_connect": null,
+        "channel": null,
+        "headless": null,
+        "isolated": null,
+        "user_data_dir": null,
+        "viewport": null,
+        "executable_path": null,
+        "chrome_arg": [],
+        "proxy_server": null,
+        "accept_insecure_certs": null,
+        "category_emulation": null,
+        "category_performance": null,
+        "category_network": null,
+        "log_file": null,
+        "extra_args": []
+      }
+    },
+    "mcp-ui Docs": {
+      "enabled": true,
+      "url": "https://gitmcp.io/idosal/mcp-ui"
+    },
+    "betterauth": {
+      "enabled": true,
+      "url": "https://mcp.better-auth.com/mcp"
+    },
+    "browser-tools-context-server": {
+      "enabled": true,
+      "remote": false,
+      "settings": {}
+    },
+    "mcp-server-github": {
+      "enabled": true,
+      "remote": false,
+      "settings": {}
+    },
+    "deepwiki": {
+      "enabled": true,
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "better-auth": {
+      "enabled": true,
+      "url": "https://mcp.better-auth.com/mcp"
+    },
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "context7_api_key": ""
+      }
+    }
+  }
+}

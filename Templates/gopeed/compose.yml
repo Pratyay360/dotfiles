@@ -1,0 +1,10 @@
+services:
+  gopeed:
+    image: docker.io/liwei2633/gopeed:latest
+    container_name: gopeed
+    ports:
+      - 9999:9999
+    volumes:
+      - ~/Downloads:/app/Downloads:Z
+
+    
