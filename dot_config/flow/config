@@ -16,7 +16,7 @@ light_theme "frappe"
 # default value: "ayu-light"
 # value type: quoted string
 
-input_mode "helix"
+input_mode "emacs"
 # default value: "flow"
 # value type: quoted string
 

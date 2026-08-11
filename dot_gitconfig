@@ -16,6 +16,9 @@
 	hooksPath = /home/pmustafi/.git_hooks/
   hooksPath = /home/pmustafi/.config/git/hooks/
   pager = delta
+	fsmonitor = true
+	preloadindex = true
+	untrackedCache = true
 [interactive]
     diffFilter = delta --color-only
 
@@ -25,3 +28,5 @@
 
 [merge]
     conflictStyle = zdiff3
+[cola]
+	startupmode = list

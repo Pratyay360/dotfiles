@@ -4,10 +4,8 @@ export PATH="$HOME/.local/toolbox:$HOME/.local/bin:$HOME/.bin:$PATH"
 if [[ -n $TERM_PROGRAM ]]; then
   exec "$HOME/.local/bin/host-spawn"
 fi
+
 source <($HOME/.config/vars)
 source <($HOME/.config/aliascontainer)
-# Added by GitButler installer
-eval "$(but completions bash)"
 
-# Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
