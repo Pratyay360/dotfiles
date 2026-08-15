@@ -16,8 +16,7 @@ light_theme "frappe"
 # default value: "ayu-light"
 # value type: quoted string
 
-input_mode "emacs"
-# default value: "flow"
+# input_mode "flow"
 # value type: quoted string
 
 # gutter_line_numbers_mode null
@@ -213,7 +212,7 @@ whitespace_mode "leading"
 # auto_open_panel_for_diagnostics true
 # value type: true or false
 
-panel_height_ratio 0.44
+panel_height_ratio 0.75
 # default value: 0.33
 # value type: fractional number
 
