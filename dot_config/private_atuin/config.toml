@@ -32,10 +32,10 @@
 auto_sync = true
 
 ## enable or disable automatic update checks
- update_check = true
+update_check = true
 
 ## address of the sync server
-# sync_address = "https://api.atuin.sh"
+sync_address = "https://api.atuin.sh"
 
 ## how often to sync history. note that this is only triggered when a command
 ## is ran, so sync intervals may well be longer
@@ -49,7 +49,7 @@ search_mode = "daemon-fuzzy"
 ## which filter mode to use by default
 ## possible values: "global", "host", "session", "session-preload", "directory", "workspace"
 ## consider using search.filters to customize the enablement and order of filter modes
-# filter_mode = "global"
+ filter_mode = "global"
 
 ## With workspace filtering enabled, Atuin will filter for commands executed
 ## in any directory within a git repository tree (default: false).
@@ -71,7 +71,7 @@ search_mode = "daemon-fuzzy"
 
 ## which style to use
 ## possible values: auto, full, compact
-# style = "auto"
+ style = "auto"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
@@ -106,6 +106,9 @@ search_mode = "daemon-fuzzy"
 ## alt-0 .. alt-9
 # ctrl_n_shortcuts = false
 
+[pty_proxy]
+enabled = true
+
 ## Show numeric shortcuts (1..9) beside list items in the TUI
 ## set to false to hide the moving numbers if you find them distracting
 # show_numeric_shortcuts = true
@@ -120,6 +123,8 @@ search_mode = "daemon-fuzzy"
 ## https://docs.rs/regex/latest/regex/#syntax
  history_filter = [
    "^secret-cmd",
+    "bws",
+    "doppler",
    "^innocuous-cmd .*--secret=.+",
  ]
 
@@ -135,7 +140,7 @@ search_mode = "daemon-fuzzy"
 ## Configure the maximum height of the preview to show.
 ## Useful when you have long scripts in your history that you want to distinguish
 ## by more than the first few lines.
-# max_preview_height = 4
+max_preview_height = 4
 
 ## Configure whether or not to show the help row, which includes the current Atuin
 ## version (and whether an update is available), a keymap hint, and the total
@@ -169,7 +174,7 @@ enter_accept = true
 # search_mode = "daemon-fuzzy"
 
 ## Defaults to false. If enabled, when triggered after &&, || or |, Atuin will complete commands to chain rather than replace the current line.
-# command_chaining = false
+command_chaining = true 
 
 ## Defaults to "emacs".  This specifies the keymap on the startup of `atuin
 ## search`.  If this is set to "auto", the startup keymap mode in the Atuin
@@ -196,39 +201,43 @@ enter_accept = true
 
 [stats]
 ## Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
-# common_subcommands = [
-#   "apt",
-#   "cargo",
-#   "composer",
-#   "dnf",
-#   "docker",
-#   "dotnet",
-#   "git",
-#   "go",
-#   "ip",
-#   "jj",
-#   "kubectl",
-#   "nix",
-#   "nmcli",
-#   "npm",
-#   "pecl",
-#   "pnpm",
-#   "podman",
-#   "port",
-#   "systemctl",
-#   "tmux",
-#   "yarn",
-# ]
+common_subcommands = [
+   "apt",
+   "cargo",
+   "composer",
+   "dnf",
+   "docker",
+   "dotnet",
+   "git",
+   "go",
+   "ip",
+   "jj",
+   "kubectl",
+   "nix",
+   "nmcli",
+   "npm",
+  "pecl",
+   "pnpm",
+   "podman",
+   "port",
+   "systemctl",
+   "tmux",
+   "yarn",
+ ]
 
 ## Set commands that should be totally stripped and ignored from stats
 # common_prefix = ["sudo"]
 
 ## Set commands that will be completely ignored from stats
-# ignored_commands = [
-#   "cd",
-#   "ls",
-#   "vi"
-# ]
+ ignored_commands = [
+   "cd",
+   "ls",
+   "vi"
+ ]
+
+[dotfiles]
+enabled = true
+
 
 [keys]
 # Defaults to true. If disabled, using the up/down key won't exit the TUI when scrolled past the first/last entry.

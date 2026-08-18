@@ -4,8 +4,9 @@ if status is-interactive
     #fnm use default &>/dev/null
     # gopass completion fish | source
     #    fishline -s $status SIGSTATUS JOBS VFISH PWD GIT WRITE N ROOT
-    atuin init fish | source
     #    eval "$(shelby init fish)"
+    atuin pty-proxy init fish | source
+    atuin init fish | source
 end
 
 if test -n "$TERM_PROGRAM"
@@ -32,6 +33,3 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 
 # nub
 set -gx PATH "$HOME/.nub/bin" $PATH
-
-# nub shims
-set -gx PATH $HOME/.nub/shims $PATH

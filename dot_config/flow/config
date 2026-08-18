@@ -16,7 +16,8 @@ light_theme "frappe"
 # default value: "ayu-light"
 # value type: quoted string
 
-# input_mode "flow"
+input_mode "helix"
+# default value: "flow"
 # value type: quoted string
 
 # gutter_line_numbers_mode null

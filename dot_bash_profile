@@ -5,3 +5,4 @@
 export LANG=C.utf8
 export LC_ALL=C.utf8
 
+. "$HOME/.cargo/env"

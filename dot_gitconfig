@@ -14,18 +14,11 @@
 	email = pratyaymustafi@outlook.com
 [core]
 	hooksPath = /home/pmustafi/.git_hooks/
-  hooksPath = /home/pmustafi/.config/git/hooks/
-  pager = delta
+	hooksPath = /home/pmustafi/.config/git/hooks/
+	pager = lumen
 	fsmonitor = true
 	preloadindex = true
 	untrackedCache = true
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-  navigate = true  
-  dark = true      
-
 [merge]
     conflictStyle = zdiff3
 [cola]

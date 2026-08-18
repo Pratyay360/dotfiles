@@ -1,17 +1,18 @@
 export PATH="$HOME/.local/bin:$HOME/.local/toolbox:$HOME/.pixi/bin:$HOME/.cargo/bin:/usr/local/bin:/bin:$HOME/.local/linuxbrew/bin:$HOME/.local/linuxbrew/sbin:$PATH"
-  eval "$(sops completion bash)"
-  export PATH="/home/pmustafi/.bun/bin:$PATH"
-  #if [[ -n $container ] && [ -n  ] ]; then
-   # eval "$($HOME/.local/bin/host-spawn /home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  #else
- #   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(sops completion bash)"
+export PATH="/home/pmustafi/.bun/bin:$PATH"
+#if [[ -n $container ] && [ -n  ] ]; then
+# eval "$($HOME/.local/bin/host-spawn /home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#else
+#   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #  fi
 
-
-  if [[ -n $TERM_PROGRAM ]]; then
-   exec "$HOME/.local/bin/host-spawn"
+if [[ -n $TERM_PROGRAM ]]; then
+  exec "$HOME/.local/bin/host-spawn"
 fi
 
+eval "$(atuin pty-proxy init bash)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+. "$HOME/.cargo/env"
