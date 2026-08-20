@@ -5,7 +5,6 @@ if status is-interactive
     # gopass completion fish | source
     #    fishline -s $status SIGSTATUS JOBS VFISH PWD GIT WRITE N ROOT
     #    eval "$(shelby init fish)"
-    atuin pty-proxy init fish | source
     atuin init fish | source
 end
 

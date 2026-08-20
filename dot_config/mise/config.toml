@@ -7,5 +7,9 @@ cheat = "latest"
 codex = "latest"
 glab = "latest"
 go = "1.26.5"
+node = "latest"
+"npm:@kilocode/cli" = "latest"
+"npm:freebuff" = "latest"
+pi = "latest"
 [settings]
 experimental = true

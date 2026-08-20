@@ -1,4 +1,4 @@
-export PATH="$HOME/.local/bin:$HOME/.local/toolbox:$HOME/.pixi/bin:$HOME/.cargo/bin:/usr/local/bin:/bin:$HOME/.local/linuxbrew/bin:$HOME/.local/linuxbrew/sbin:$PATH"
+export PATH="$HOME/.atuin/bin:$HOME/.local/bin:$HOME/.local/toolbox:$HOME/.pixi/bin:$HOME/.cargo/bin:/usr/local/bin:/bin:$HOME/.local/linuxbrew/bin:$HOME/.local/linuxbrew/sbin:$PATH"
 eval "$(sops completion bash)"
 export PATH="/home/pmustafi/.bun/bin:$PATH"
 #if [[ -n $container ] && [ -n  ] ]; then
