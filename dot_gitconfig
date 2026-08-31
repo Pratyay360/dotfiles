@@ -15,7 +15,6 @@
 [core]
 	hooksPath = /home/pmustafi/.git_hooks/
 	hooksPath = /home/pmustafi/.config/git/hooks/
-	pager = lumen
 	fsmonitor = true
 	preloadindex = true
 	untrackedCache = true

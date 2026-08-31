@@ -1,1 +1,59 @@
-qqq
+# This file is written by flow when settings are changed interactively. You may
+# edit values by hand, but not comments. Comments will be overwritten. Values
+# configured to the default value will be automatically commented and possibly
+# updated if the default value changes. To store values that cannot be changed
+# by flow, put them in a new file and reference it in the include_files
+# configuration option at the end of this file. include_files are never
+# modified by flow.
+
+# fontface "Iosevka (built-in)"
+# value type: quoted string
+
+# fontsize 14
+# value type: positive integer up to 255
+
+# fontweight 500
+# value type: positive integer up to 65535
+
+# fontweight_bold_offset 300
+# value type: positive integer up to 65535
+
+# fontbackend "freetype"
+# value type: one of "truetype", "freetype"
+
+# fonthinting "normal"
+# value type: one of "none", "slight", "normal", "mono"
+
+# lineheight 100
+# value type: positive integer up to 255
+
+# block_and_line_symbols "sprite"
+# value type: one of "font", "sprite"
+
+# allow_color_glyphs true
+# value type: true or false
+
+# gui_glyph_atlas_budget_mb 96
+# value type: positive integer up to 65535
+
+# gui_glyph_atlas_page_mb 4
+# value type: positive integer up to 65535
+
+# initial_window_x 1087
+# value type: positive integer up to 65535
+
+# initial_window_y 1014
+# value type: positive integer up to 65535
+
+# gui_window_transparency true
+# value type: true or false
+
+# gui_background_opacity 0.95
+# value type: fractional number
+
+# gui_ignore_theme_alpha true
+# value type: true or false
+
+# include_files ""
+# value type: quoted string of : separated paths
+

@@ -47,6 +47,9 @@ input_mode "helix"
 # enable_terminal_color_scheme true
 # value type: true or false
 
+# terminal_TERM "xterm-256color"
+# value type: quoted string
+
 # terminal_scrollback_size 1000
 # value type: positive integer up to 65535
 
@@ -60,6 +63,9 @@ input_mode "helix"
 # value type: true or false
 
 # terminal_send_on_smart_insert_line_before true
+# value type: true or false
+
+# terminal_read_wt_profiles true
 # value type: true or false
 
 # task_runner "terminal"
@@ -78,9 +84,6 @@ input_mode "helix"
 # value type: true or false
 
 # highlight_current_line_gutter true
-# value type: true or false
-
-# syntax_highlight_last_scope_wins true
 # value type: true or false
 
 # highlight_columns [80,100,120]
@@ -213,8 +216,7 @@ whitespace_mode "leading"
 # auto_open_panel_for_diagnostics true
 # value type: true or false
 
-panel_height_ratio 0.75
-# default value: 0.33
+# panel_height_ratio 0.33
 # value type: fractional number
 
 # scrollbar_auto_hide true
@@ -318,6 +320,18 @@ home_style "single_double_left_right_boxed"
 
 # maximum_symlink_depth 3
 # value type: positive integer
+
+# enable_file_watcher true
+# value type: true or false
+
+# desktop_theme_file ""
+# value type: quoted string
+
+# non_indexed_projects ["/","/bin","/boot","/dev","/home","/lib","/lib64","/media","/proc","/run","/sbin","/sys","/usr","/var"]
+# value type: list of quoted strings
+
+# watch_non_indexed_projects false
+# value type: true or false
 
 # include_files ""
 # value type: quoted string of : separated paths

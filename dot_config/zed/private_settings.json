@@ -7,7 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_weight": 400.0,
   "terminal": {
+    "font_weight": 400.0,
     "shell": {
       "with_arguments": {
         "program": "fish",
@@ -30,7 +32,7 @@
   },
   "languages": {
     "HTML": {
-      "show_edit_predictions": false
+      "show_edit_predictions": true
     }
   },
   "gutter": {
@@ -74,6 +76,9 @@
   },
   "cli_default_open_behavior": "new_window",
   "agent_servers": {
+    "antigravity-acp": {
+      "type": "registry"
+    },
     "codex-acp": {
       "type": "registry"
     },
@@ -108,7 +113,7 @@
     "opencode": {
       "default_config_options": {
         "effort": "high",
-        "model": "tokenrouter/z-ai/glm-5.2-free"
+        "model": "nvidia/meta/muse-glimmer-30b"
       },
       "type": "registry"
     },
@@ -149,7 +154,7 @@
     },
     "default_model": {
       "provider": "zed.dev",
-      "model": "gpt-5-mini",
+      "model": "gpt-5-nano",
       "enable_thinking": false
     },
     "dock": "right",
