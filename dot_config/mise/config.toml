@@ -1,6 +1,7 @@
 [tools]
 action-validator = "latest"
 actionlint = "latest"
+age = "latest"
 android-sdk = "latest"
 aube = "latest"
 betterleaks = "latest"
@@ -31,3 +32,4 @@ superhtml = "latest"
 [settings]
 experimental = true
 auto_update = true
+registry_floating = true
