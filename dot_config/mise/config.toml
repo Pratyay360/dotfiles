@@ -1,8 +1,16 @@
 [tools]
-aube = "latest"
+action-validator = "latest"
+actionlint = "latest"
+age = "latest"
 betterleaks = "latest"
+claude = "latest"
+codex = "latest"
+crush = "latest"
 go = "latest"
 node = "latest"
 "npm:freebuff" = "latest"
 opencode = "latest"
 pi = "latest"
+
+[settings]
+experimental = true

@@ -32,3 +32,6 @@ test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
 
 # nub
 set -gx PATH "$HOME/.nub/bin" $PATH
+
+# kilo
+fish_add_path /home/pmustafi/.kilo/bin

@@ -94,6 +94,7 @@
     },
     "cline": {
       "default_config_options": {
+        "auto_approve": true,
         "model": "google/gemma-4-31b-it:free"
       },
       "type": "registry"
@@ -153,9 +154,10 @@
       }
     },
     "default_model": {
+      "effort": "MEDIUM",
       "provider": "zed.dev",
-      "model": "gpt-5-nano",
-      "enable_thinking": false
+      "model": "gemini-3.5-flash",
+      "enable_thinking": true
     },
     "dock": "right",
     "favorite_models": [],
