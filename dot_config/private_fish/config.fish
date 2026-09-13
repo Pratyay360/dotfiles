@@ -35,3 +35,5 @@ set -gx PATH "$HOME/.nub/bin" $PATH
 
 # kilo
 fish_add_path /home/pmustafi/.kilo/bin
+
+# string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
