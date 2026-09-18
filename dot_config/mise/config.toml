@@ -1,19 +1,17 @@
 [tools]
 action-validator = "latest"
-actionlint = "latest"
-age = "latest"
-betterleaks = "latest"
+aube = "latest"
 claude = "latest"
 codex = "latest"
 crush = "latest"
-go = "latest"
 java = "zulu"
 node = "latest"
 "npm:command-code" = "latest"
 "npm:freebuff" = "latest"
-"npm:surge" = "latest"
 opencode = "latest"
 pi = "latest"
+supabase = "latest"
 
 [settings]
 experimental = true
+color = true

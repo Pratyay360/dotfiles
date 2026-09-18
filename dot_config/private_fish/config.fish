@@ -37,3 +37,4 @@ set -gx PATH "$HOME/.nub/bin" $PATH
 fish_add_path /home/pmustafi/.kilo/bin
 
 # string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)
+export LD_LIBRARY_PATH="$HOME/.local/clang/lib:$LD_LIBRARY_PATH"

@@ -7,3 +7,13 @@ export LC_ALL=C.utf8
 . "$HOME/.cargo/env"
 
 eval "$($HOME/.config/vars)"
+
+# >>> android autocomplete >>>
+_android_complete() {
+    local cur suggestions
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    suggestions=$(android --complete "${COMP_WORDS[@]:1:$COMP_CWORD}" 2>/dev/null)
+    COMPREPLY=($(compgen -W "$suggestions" -- "$cur"))
+}
+complete -F _android_complete android
+# <<< android autocomplete <<<
