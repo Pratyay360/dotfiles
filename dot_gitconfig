@@ -4,11 +4,6 @@
 	signingKey = ssh.variant
 [init]
 	defaultBranch = main
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [author]
 	name = Pratyay360
 	email = pratyaymustafi@outlook.com
@@ -22,3 +17,8 @@
     conflictStyle = zdiff3
 [cola]
 	startupmode = list
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

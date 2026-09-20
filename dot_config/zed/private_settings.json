@@ -266,6 +266,13 @@
       "settings": {
         "context7_api_key": ""
       }
+    },
+    "Sanity": {
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer skCGUDcAdOJl4vNGEzEW1gcUAXLTnD8bErd4r3QCHMuwY5mbrZwVOd8Y0yU12BCWCuQiJscCO6cRCHw2F"
+      },
+      "url": "https://mcp.sanity.io"
     }
   }
 }
