@@ -1,16 +1,19 @@
 [tools]
 action-validator = "latest"
+age = "latest"
 aube = "latest"
-claude = "latest"
+betterleaks = "latest"
 codex = "latest"
 crush = "latest"
 git-lfs = "latest"
+"github:can1357/oh-my-pi" = "latest"
 java = "zulu"
 node = "latest"
 "npm:command-code" = "latest"
 "npm:freebuff" = "latest"
 opencode = "latest"
 pi = "latest"
+ruby = "latest"
 supabase = "latest"
 
 [settings]
