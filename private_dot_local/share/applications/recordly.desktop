@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Recordly
+Comment=A free, creator-focused screen recorder with auto-zoom, cursor effects, backgrounds, annotations, and more - built for polished videos out of the box.
+Icon=/var/home/pmustafi/.appimages/.icons/recordly
+TryExec=/var/home/pmustafi/.appimages/recordly.appimage
+Exec=/var/home/pmustafi/.appimages/recordly.appimage --appimage-extract-and-run --no-sandbox %U
+Terminal=false
+Categories=AudioVideo;
+StartupWMClass=Recordly
+X-AppImage-Version=1.3.3
+X-AppImage-Name=Recordly

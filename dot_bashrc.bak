@@ -1,0 +1,26 @@
+
+ # .bashrc
+
+
+   # Source global definitions
+if [ -f /etc/bashrc ]; then
+       . /etc/bashrc
+fi
+export SSH_AUTH_SOCK="$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock"
+export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.local/toolbox:$PATH"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+
+export LANG=C.utf8
+export LC_ALL=C.utf8
+source "$HOME/.cargo/env"
+eval "$(zoxide init bash)"
+eval "$(mise activate bash --shims)"
+   # eval "$(oh-my-posh init bash --config ~/.amro.omp.json)"
+if [ -d ~/.bashrc.d ]; then
+   for rc in ~/.bashrc.d/*; do
+       if [ -f "$rc" ]; then
+           . "$rc"
+       fi
+   done
+fi
+unset rc

@@ -1,0 +1,24 @@
+[user]
+	email = pratyaymustafi@outlook.com
+	name = PRATYAY MUSTAFI
+	signingKey = ssh.variant
+[init]
+	defaultBranch = main
+[author]
+	name = Pratyay360
+	email = pratyaymustafi@outlook.com
+[core]
+	hooksPath = /home/pmustafi/.git_hooks/
+	hooksPath = /home/pmustafi/.config/git/hooks/
+	fsmonitor = true
+	preloadindex = true
+	untrackedCache = true
+[merge]
+    conflictStyle = zdiff3
+[cola]
+	startupmode = list
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
