@@ -1,0 +1,294 @@
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#   ✦  STARSHIP CONFIG  ✦   cyberpunk-neon edition
+#      drop this in ~/.config/starship.toml
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+# ── Prompt layout ────────────────────────────────────────────
+# LEFT  TOP:  ╭─[os][user@host] [dir] [git] [lang stack]
+# RIGHT TOP:  [sudo][shell] ░▒▓ [cloud/k8s] ░▒▓ [mem][bat] ░▒▓ [dur][jobs] ░▒▓ [time]
+# BOT LINE:   ╰─❯
+format = """
+[╭─](bold bright-black)\
+$os\
+$username\
+$hostname\
+[─](bold bright-black)\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+[─](bold bright-black)\
+$nodejs\
+$python\
+$rust\
+$golang\
+$java\
+$kotlin\
+$docker_context\
+$package\
+$line_break\
+[╰─](bold bright-black)\
+$character"""
+
+right_format = """
+$sudo\
+$shell\
+[▓▒░](bright-black)\
+$aws\
+$gcloud\
+$kubernetes\
+[▓▒░](bright-black)\
+$memory_usage\
+$battery\
+[▓▒░](bright-black)\
+$cmd_duration\
+$jobs\
+[▓▒░](bright-black)\
+$time\
+"""
+continuation_prompt = "[∙](bright-black) "
+add_newline = true
+
+
+# ── OS Icon ──────────────────────────────────────────────────
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style   = "bold bright-cyan"
+
+[os.symbols]
+Macos   = "  "
+Linux   = "  "
+Ubuntu  = "  "
+Arch    = "  "
+Fedora  = "  "
+Windows = "  "
+Unknown = "  "
+
+
+# ── Username ─────────────────────────────────────────────────
+[username]
+show_always = true
+format      = "[ $user]($style)[](bold bright-black)"
+style_user  = "bold cyan"
+style_root  = "bold red"
+
+
+# ── Hostname ─────────────────────────────────────────────────
+[hostname]
+ssh_only  = false
+format    = "[@](bright-black)[$hostname]($style) "
+style     = "bold bright-magenta"
+trim_at   = ".local"
+
+
+# ── Directory ────────────────────────────────────────────────
+[directory]
+format            = "[ 󰉋 $path]($style)[$read_only]($read_only_style) "
+style             = "bold bright-yellow"
+read_only         = " 󰌾"
+read_only_style   = "red"
+truncation_length = 4
+truncate_to_repo  = true
+home_symbol       = "~"
+
+[directory.substitutions]
+"~/Documents" = "󰈙 Docs"
+"~/Downloads" = " DLs"
+"~/Desktop"   = "󰧶 Desktop"
+"~/Projects"  = "󰏗 Projects"
+"~/dev"       = "󰲋 dev"
+"~"           = ""
+
+
+# ── Git Branch ───────────────────────────────────────────────
+[git_branch]
+format   = "[ $symbol$branch(:$remote_branch)]($style) "
+symbol   = " "
+style    = "bold bright-green"
+truncation_length = 24
+truncation_symbol = "…"
+
+
+# ── Git Status ───────────────────────────────────────────────
+[git_status]
+format      = "([$all_status$ahead_behind]($style) )"
+style       = "bold bright-red"
+ahead       = "⇡${count}"
+behind      = "⇣${count}"
+diverged    = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted  = "󰩌 ${count} "
+untracked   = "? ${count} "
+stashed     = " ${count} "
+modified    = " ${count} "
+staged      = " ${count} "
+renamed     = "󰑕 ${count} "
+deleted     = " ${count} "
+
+
+# ── Git State (rebase, merge, etc.) ──────────────────────────
+[git_state]
+format      = "[$state( $progress_current/$progress_total)]($style) "
+style       = "bold yellow"
+rebase      = "REBASING"
+merge       = "MERGING"
+revert      = "REVERTING"
+cherry_pick = "🍒 PICKING"
+bisect      = "BISECTING"
+am          = "AM"
+am_or_rebase = "AM/REBASE"
+
+
+# ── Command Duration ─────────────────────────────────────────
+[cmd_duration]
+min_time            = 2_000
+format              = "[ 󱑃 $duration]($style) "
+style               = "bright-black"
+show_notifications  = false
+
+
+# ── Jobs ─────────────────────────────────────────────────────
+[jobs]
+format    = "[ $number ]($style)"
+style     = "bold bright-blue"
+symbol    = "󱜯 "
+threshold = 1
+
+
+# ── Battery ──────────────────────────────────────────────────
+[battery]
+format = "[$symbol$percentage]($style) "
+
+[[battery.display]]
+threshold = 15
+style     = "bold red"
+discharging_symbol = " "
+
+[[battery.display]]
+threshold = 50
+style     = "bold yellow"
+discharging_symbol = " "
+
+[[battery.display]]
+threshold = 100
+style     = "bold green"
+discharging_symbol = " "
+charging_symbol = "󱐋 "
+
+
+# ── Clock ────────────────────────────────────────────────────
+[time]
+disabled        = false
+format          = "[  $time]($style) "
+time_format     = "%H:%M"
+style           = "bright-black"
+use_12hr        = false
+
+
+# ── Prompt character ─────────────────────────────────────────
+[character]
+success_symbol = "[❯](bold bright-green)[❯](bold bright-cyan)[❯](bold bright-blue)"
+error_symbol   = "[✗](bold red)[❯](bold red)"
+vimcmd_symbol  = "[❮](bold bright-yellow)[❮](bold yellow)"
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#   LANGUAGE / TOOL MODULES
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[nodejs]
+format    = "[ $symbol$version]($style) "
+symbol    = " "
+style     = "bold bright-green"
+detect_extensions = ["js", "ts", "mjs", "cjs", "jsx", "tsx"]
+detect_files      = ["package.json", ".nvmrc", ".node-version"]
+
+[python]
+format               = "[ $symbol$version($virtualenv)]($style) "
+symbol               = " "
+style                = "bold bright-yellow"
+pyenv_version_name   = true
+detect_extensions    = ["py"]
+detect_files         = ["pyproject.toml", "requirements.txt", ".python-version", "Pipfile"]
+
+[rust]
+format    = "[ $symbol$version]($style) "
+symbol    = " "
+style     = "bold bright-red"
+
+[golang]
+format    = "[ $symbol$version]($style) "
+symbol    = " "
+style     = "bold bright-cyan"
+
+[java]
+format    = "[ $symbol$version]($style) "
+symbol    = " "
+style     = "bold bright-red"
+
+[kotlin]
+format    = "[ $symbol$version]($style) "
+symbol    = " "
+style     = "bold bright-magenta"
+
+[docker_context]
+format    = "[ $symbol$context]($style) "
+symbol    = " "
+style     = "bold bright-blue"
+only_with_files = false
+
+[package]
+format    = "[ $symbol$version]($style) "
+symbol    = "󰏗 "
+style     = "bold bright-yellow"
+display_private = false
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#   CLOUD & INFRA  (shown in right prompt)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[aws]
+format    = "[ $symbol($profile)(\\($region\\))]($style) "
+symbol    = "󰸏 "
+style     = "bold bright-yellow"
+
+[gcloud]
+format    = "[ $symbol$account(@$domain)(\\($project\\))]($style) "
+symbol    = "󱇶 "
+style     = "bold bright-blue"
+
+[kubernetes]
+format    = "[ $symbol$context(\\($namespace\\))]($style) "
+symbol    = "󱃾 "
+style     = "bold bright-cyan"
+disabled  = false
+
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+#   MISC MODULES (opt-in)
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[sudo]
+format    = "[ as $symbol]($style) "
+symbol    = "󱅧 "
+style     = "bold red"
+disabled  = false
+
+[shell]
+fish_indicator   = " fish"
+bash_indicator   = " bash"
+zsh_indicator    = " zsh"
+powershell_indicator = " psh"
+format    = "[$indicator]($style) "
+style     = "bright-black"
+disabled  = false
+
+[memory_usage]
+format    = "[$symbol${ram}( | ${swap})]($style) "
+symbol    = "󰍛 "
+style     = "bold bright-magenta"
+threshold = 75
+disabled  = false
