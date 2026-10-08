@@ -1,0 +1,20 @@
+[tools]
+aube = "latest"
+betterleaks = "latest"
+bitwarden-secrets-manager = "latest"
+"cargo:lumen" = "latest"
+cheat = "latest"
+crush = "latest"
+"github:can1357/oh-my-pi" = "latest"
+glab = "latest"
+httpie-go = "latest"
+jqp = "latest"
+make = "latest"
+node = "latest"
+"npm:@kilocode/cli" = "latest"
+"npm:cline" = "latest"
+"npm:freebuff" = "latest"
+pi = "latest"
+usage = "latest"
+[settings]
+experimental = true

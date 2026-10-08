@@ -1,0 +1,19 @@
+[tools]
+aube = "1.5.1"
+bun = "latest"
+codex = "latest"
+copilot-cli = "latest"
+deno = "latest"
+doggo = "latest"
+doppler = { version = "latest", exe = "doppler" }
+dotenvx = "latest"
+fnox = "latest"
+gemini = "latest"
+ggshield = "latest"
+gh = "latest"
+glab = { version = "latest", exe = "glab" }
+go = "latest"
+infisical = "latest"
+usage = "latest"
+vercel = "latest"
+wrangler = "latest"
