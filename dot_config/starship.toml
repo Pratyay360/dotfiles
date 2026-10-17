@@ -75,16 +75,12 @@ format      = "[ $user]($style)[](bold bright-black)"
 style_user  = "bold cyan"
 style_root  = "bold red"
 
-
-# ── Hostname ─────────────────────────────────────────────────
 [hostname]
 ssh_only  = false
 format    = "[@](bright-black)[$hostname]($style) "
 style     = "bold bright-magenta"
 trim_at   = ".local"
 
-
-# ── Directory ────────────────────────────────────────────────
 [directory]
 format            = "[ 󰉋 $path]($style)[$read_only]($read_only_style) "
 style             = "bold bright-yellow"
@@ -96,14 +92,12 @@ home_symbol       = "~"
 
 [directory.substitutions]
 "~/Documents" = "󰈙 Docs"
-"~/Downloads" = " DLs"
+"~/Downloads" = "⬇️ DLs"
 "~/Desktop"   = "󰧶 Desktop"
 "~/Projects"  = "󰏗 Projects"
 "~/dev"       = "󰲋 dev"
 "~"           = ""
 
-
-# ── Git Branch ───────────────────────────────────────────────
 [git_branch]
 format   = "[ $symbol$branch(:$remote_branch)]($style) "
 symbol   = " "
@@ -111,8 +105,6 @@ style    = "bold bright-green"
 truncation_length = 24
 truncation_symbol = "…"
 
-
-# ── Git Status ───────────────────────────────────────────────
 [git_status]
 format      = "([$all_status$ahead_behind]($style) )"
 style       = "bold bright-red"
@@ -127,8 +119,6 @@ staged      = " ${count} "
 renamed     = "󰑕 ${count} "
 deleted     = " ${count} "
 
-
-# ── Git State (rebase, merge, etc.) ──────────────────────────
 [git_state]
 format      = "[$state( $progress_current/$progress_total)]($style) "
 style       = "bold yellow"
