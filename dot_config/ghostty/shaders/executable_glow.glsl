@@ -46,11 +46,11 @@ vec3 adjustSaturation(vec3 color, float saturation) {
 
 bool isTargetColor(vec3 rgb) {
 vec3 targetColor = vec3(193.0/255.0, 201.0/255.0, 247.0/255.0); // #c1c9f7
- 
+
   float threshold = 0.25; // Adjustable threshold for color similarity (Euclidean distance in RGB space)
- 
+
   float dist = length(rgb - targetColor);
- 
+
   return (dist < threshold);
 }
 
@@ -58,10 +58,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   vec2 uv = fragCoord.xy / iResolution.xy;
   vec4 color = texture(iChannel0, uv);
   vec2 step = vec2(1.414) / iResolution.xy;
-  
+
   float saturationBoost = 1.5; // Vibrant shine
   float glowIntensity = 0.1; // Intensity for shine moments
-  
+
   // Animated sweep: A moving sine wave creates a shine that sweeps left-to-right every ~2 seconds
   // Adjust 'sweepSpeed' to change frequency (lower = less often), 'waveFreq' for shine width
   float sweepSpeed = 0.9; // Sweeps every 2π / speed ≈ 2 seconds per full cycle
@@ -70,7 +70,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
   float shine = sin(t + uv.x * waveFreq);
   shine = smoothstep(0.0, 1.0, (shine + 1.0) / 2.0); // Convert to 0-1 ramp
   shine *= 0.8; // Scale down to keep it subtle even at peak
-  
+
   for (int i = 0; i < 24; i++) {
     vec3 s = samples[i];
     vec4 c = texture(iChannel0, uv + s.xy * step);

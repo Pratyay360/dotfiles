@@ -94,15 +94,15 @@ float electricArc(vec2 p, vec2 a, vec2 b, float time, float progress) {
     vec2 dir = normalize(b - a);
     vec2 perp = vec2(-dir.y, dir.x);
     float dist = distance(a, b);
-    
+
     // Base arc with noise for tesla coil effect
     float t = clamp(dot(p - a, dir) / dist, 0.0, 1.0);
     vec2 projected = a + dir * t * dist;
     vec2 offset = perp * (fbm(vec2(t * 10.0, time * 10.0)) - 0.5) * 0.1 * progress;
-    
+
     // Main arc
     float d = length(p - (projected + offset));
-    
+
     // Add branching effects
     float branch = 0.0;
     if (progress > 0.5) {
@@ -112,7 +112,7 @@ float electricArc(vec2 p, vec2 a, vec2 b, float time, float progress) {
         branch = length(p - (projected + branchOffset));
         d = min(d, branch);
     }
-    
+
     return d;
 }
 
@@ -129,53 +129,53 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     #if !defined(WEB)
     fragColor = texture(iChannel0, fragCoord.xy / iResolution.xy);
     #endif
-    
+
     // Normalization for fragCoord to a space of -1 to 1;
     vec2 vu = normalize(fragCoord, 1.);
     vec2 offsetFactor = vec2(-.5, 0.5);
-    
+
     // Normalization for cursor position and size;
     vec4 currentCursor = vec4(normalize(iCurrentCursor.xy, 1.), normalize(iCurrentCursor.zw, 0.));
     vec4 previousCursor = vec4(normalize(iPreviousCursor.xy, 1.), normalize(iPreviousCursor.zw, 0.));
-    
+
     vec2 centerCC = getRectangleCenter(currentCursor);
     vec2 centerCP = getRectangleCenter(previousCursor);
     vec2 centerCP_new = centerCP + (centerCP - centerCC) * TAIL_EXTENSION;
-    
+
     float progress = blend(clamp((iTime - iTimeCursorChange) / DURATION, 0.0, 1));
     float easedProgress = ease(progress);
-    
+
     float lineLength = distance(centerCC, centerCP_new);
     float distanceToEnd = distance(vu.xy, centerCC);
     float alphaModifier = distanceToEnd / (lineLength * easedProgress);
     if (alphaModifier > 1.0) {
         alphaModifier = 1.0;
     }
-    
+
     // Enhanced tapering with smoothstep for smoother opacity falloff towards tail end
     float trailOpacity = 1.0 - smoothstep(0.0, 1.0, alphaModifier);
-    
+
     // Create electric arc effect
     float arcThickness = 0.005 + 0.003 * sin(iTime * 30.0); // Pulsating thickness
     float arc = electricArc(vu, centerCC, centerCP_new, iTime, easedProgress);
     float arcAlpha = 1.0 - smoothstep(arcThickness * 0.5, arcThickness, arc);
-    
+
     // Add glow effect
     float glow = 1.0 - smoothstep(arcThickness, arcThickness * 2.0, arc);
-    
+
     vec4 newColor = fragColor;
-    
+
     // Apply electric arc with glow
     if (arcAlpha > 0.0) {
-        vec4 arcColor = mix(ELECTRIC_COLOR, TRAIL_COLOR_ACCENT, 
+        vec4 arcColor = mix(ELECTRIC_COLOR, TRAIL_COLOR_ACCENT,
                           0.5 + 0.5 * sin(iTime * 20.0)); // Pulsating color
         newColor = mix(newColor, arcColor, arcAlpha * trailOpacity);
         newColor = mix(newColor, ELECTRIC_COLOR * 0.5, glow * trailOpacity * 0.3);
     }
-    
+
     // Draw cursor
     float sdfCursor = getSdfRectangle(vu, currentCursor.xy - (currentCursor.zw * offsetFactor), currentCursor.zw * 0.5);
     newColor = mix(newColor, CURRENT_CURSOR_COLOR, 1.0 - smoothstep(0.0, 0.01, sdfCursor));
-    
+
     fragColor = newColor;
 }
